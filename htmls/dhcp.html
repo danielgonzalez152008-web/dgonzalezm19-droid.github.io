@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHCP: Protocolo de Configuración Dinámica de Host</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Estilos de Tipografía y Encabezados */
+        h1 {
+            color: #007bff; /* Azul primario */
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #007bff;
+            margin-top: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #28a745; /* Verde secundario */
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #343a40;
+            margin-top: 20px;
+            font-size: 1.4em;
+        }
+
+        /* Párrafo Introductorio */
+        #introduccion p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            padding: 10px;
+            border-left: 5px solid #ffc107; /* Amarillo para destacar */
+            background-color: #fff9e6;
+        }
+
+        /* Lista DORA (Funcionamiento) */
+        #funcionamiento ol {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        #funcionamiento ol li {
+            background-color: #e9ecef;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+        #funcionamiento ol li strong {
+            color: #dc3545; /* Rojo para las fases DORA */
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        /* Lista de Ventajas y Ejemplos */
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Tabla de Comparación */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        th, td {
+            border: 1px solid #ced4da;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa; /* Rayas de cebra */
+        }
+        tbody tr:hover {
+            background-color: #e2e6ea;
+        }
+
+        /* Pie de Página */
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            border-top: 2px solid #ccc;
+            font-size: 0.85em;
+            text-align: center;
+            color: #6c757d;
+            background-color: #ffffff;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Protocolo de Configuración Dinámica de Host (DHCP)</h1>
+        </header>
+
+        <section id="introduccion">
+            <p>
+                El **Protocolo de Configuración Dinámica de Host (DHCP, Dynamic Host Configuration Protocol)** es un protocolo de gestión de red esencial que opera bajo un modelo cliente-servidor [1, 2]. Su función principal es **asignar direcciones IP de manera automática** y otros parámetros de configuración de red a los dispositivos que lo solicitan [1, 3, 4]. Este servicio automatiza la asignación de direcciones IP, máscaras de subred, *gateway* y otros parámetros de redes IP, proceso conocido como “direccionamiento dinámico” [3, 5]. DHCP elimina la necesidad de asignar direcciones IP manualmente, un proceso que puede ser tedioso y propenso a errores, especialmente en redes grandes [4, 6-8].
+            </p>
+        </section>
+
+        <section id="definicion">
+            <h2>Definición y Propósito</h2>
+            <p>
+                DHCP permite a un host obtener una dirección IP de forma dinámica cuando se conecta a la red [6]. El servidor DHCP elige una dirección de un rango configurado llamado “pool” y la asigna o concede al host por un período establecido, conocido como **tiempo de concesión** (*lease time*) [6, 9, 10]. Si el host se apaga o se desconecta, la dirección regresa al *pool* para volver a utilizarse [7, 11].
+            </p>
+            <h3>Parámetros de Configuración</h3>
+            <p>
+                Además de la dirección IP, el protocolo DHCP puede configurar otros parámetros de red [2, 4]:
+                <ul>
+                    <li>La máscara de subred [2, 4, 12].</li>
+                    <li>La puerta de enlace predeterminada (o *router*) [2, 4, 12].</li>
+                    <li>Los servidores DNS (Domain Name System) [1, 4, 12].</li>
+                    <li>Otros valores de configuración de TCP/IP adicionales mediante opciones DHCP [12, 13].</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="funcionamiento">
+            <h2>Funcionamiento Detallado: El Proceso DORA</h2>
+            <p>
+                La asignación automática de IP por parte del servidor DHCP se realiza mediante el intercambio **DORA** (Descubrimiento, Oferta, Solicitud y Confirmación) [14, 15]. Este proceso de 4 pasos es crucial para la automatización de la configuración de IP en la red [16, 17].
+            </p>
+
+            <h3 class="dora-title">Fases del Proceso DHCP DORA</h3>
+            <ol>
+                <li>
+                    <strong>1. Descubrimiento (DHCPDISCOVER):</strong> El dispositivo cliente habilitado para DHCP, que carece de una dirección IP, emite un mensaje de difusión (*broadcast*) mediante un paquete UDP para localizar servidores DHCP disponibles en la red [16, 18, 19].
+                </li>
+                <li>
+                    <strong>2. Oferta (DHCPOFFER):</strong> Uno o más servidores DHCP que reciben el mensaje responden con un mensaje de oferta [16, 18]. Este incluye una dirección IP disponible, la máscara de subred, el *gateway* predeterminado, la dirección del servidor DNS, y el tiempo de concesión (*lease time*) [16, 18, 20]. El servidor reserva temporalmente la IP ofrecida [20].
+                </li>
+                <li>
+                    <strong>3. Solicitud (DHCPREQUEST):</strong> El dispositivo cliente elige una oferta y responde con un mensaje de solicitud, aceptando la dirección IP ofrecida y solicitando formalmente su arrendamiento [16, 18]. Este mensaje se envía por difusión para que los servidores no elegidos cancelen sus reservas [20].
+                </li>
+                <li>
+                    <strong>4. Confirmación (DHCPACK):</strong> El servidor seleccionado asigna la dirección IP al cliente, almacena la información, y envía un mensaje de confirmación que contiene todos los parámetros de configuración de red para el cliente [16, 18, 21].
+                </li>
+            </ol>
+            <p>
+                Si el cliente y el servidor no comparten el mismo dominio de difusión (*broadcast*), un agente de retransmisión (*relay agent*), a menudo un enrutador, reenvía las solicitudes y respuestas entre redes [18, 22, 23].
+            </p>
+        </section>
+
+        <section id="ventajas">
+            <h2>Ventajas del DHCP</h2>
+            <p>
+                El uso de DHCP se prefiere en redes locales más grandes, en entornos empresariales o donde los usuarios cambian con frecuencia [6]. Las principales ventajas incluyen:
+            </p>
+            <ul>
+                <li>**Configuración Fiable de IP:** Minimiza los errores de configuración causados por la configuración manual, como errores tipográficos o conflictos de direcciones por asignación duplicada [1, 8].</li>
+                <li>**Administración Simplificada:** El proceso está centralizado y automatizado [7, 8], eliminando el trabajo manual de configurar las IP de los dispositivos [13, 24, 25].</li>
+                <li>**Eficiencia de Recursos:** Las direcciones IP que ya no están en uso se devuelven automáticamente al *pool* para su reasignación, lo que permite un uso eficaz de los recursos [7, 11].</li>
+                <li>**Movilidad:** Es más conveniente para dispositivos móviles que se mueven con frecuencia entre redes, ya que asigna direcciones IP automáticamente [11, 24].</li>
+                <li>**Escalabilidad:** Ofrece eficiencia y mejor soporte para la escalabilidad en grandes redes complejas [4, 24].</li>
+                <li>**Flexibilidad:** Permite asignar y desasignar IP de forma automática y sencilla, facilitando la reconfiguración [24].</li>
+            </ul>
+        </section>
+
+        <section id="ejemplos">
+            <h2>Ejemplos de Uso en Redes Reales</h2>
+            <p>
+                DHCP es un protocolo universalmente utilizado para la provisión de servicios de direccionamiento IP [3].
+            </p>
+            <ul>
+                <li>**Redes Domésticas:** El servidor DHCP suele estar ubicado en el *router* local que conecta la red doméstica al ISP (Proveedor de Servicios de Internet) [26, 27]. Los hosts locales reciben la información de la dirección IP directamente del *router* local [26].</li>
+                <li>**Entornos Corporativos:** En redes medianas a grandes, el servidor DHCP suele ser un servidor local dedicado con base en una PC [26]. DHCP se utiliza para hosts de uso general y dispositivos de usuario final [28].</li>
+                <li>**Zonas de Cobertura Inalámbrica (Hotspots):** Permite el acceso a Internet en lugares como aeropuertos o cafeterías. Cuando un dispositivo inalámbrico ingresa a la zona, su cliente DHCP contacta al servidor DHCP local para obtener una dirección IP [26].</li>
+                <li>**Nube y Virtualización:** En plataformas como AWS, Azure y Google Cloud, DHCP sigue asignando IP y parámetros, aunque integrado en el plano de control, gestionado mediante políticas por red virtual [29].</li>
+            </ul>
+        </section>
+
+        <section id="comparacion">
+            <h2>DHCP vs. Configuración Manual (IP Estática)</h2>
+            <p>
+                Tanto el direccionamiento dinámico (DHCP) como el estático tienen un lugar en el diseño de red, y muchas redes utilizan ambos, reservando el estático para dispositivos de red específicos [28, 30, 31].
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Factor</th>
+                        <th>DHCP (Dinámico) [24, 25]</th>
+                        <th>Configuración Estática (Fija) [24, 32]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>**Asignación**</td>
+                        <td>Automática por el servidor DHCP [7, 33].</td>
+                        <td>Manual por el administrador de red en cada dispositivo [3, 34].</td>
+                    </tr>
+                    <tr>
+                        <td>**Escalabilidad**</td>
+                        <td>Ofrece eficiencia y mejor soporte para la escalabilidad en grandes redes complejas [24].</td>
+                        <td>Asignar IPs individualmente requiere tiempo y coordinación, dificultando la escalabilidad en redes grandes [35].</td>
+                    </tr>
+                    <tr>
+                        <td>**Uso de Direcciones IP**</td>
+                        <td>Uso eficiente, las direcciones no utilizadas regresan al *pool* para reutilizarse [7, 11].</td>
+                        <td>Una IP asignada a un equipo apagado será una IP inutilizable hasta que se revoque manualmente [35].</td>
+                    </tr>
+                    <tr>
+                        <td>**Seguridad**</td>
+                        <td>Puede ser difícil de rastrear y menos seguro, ya que asigna direcciones de forma predeterminada a cualquier dispositivo solicitante [24, 28].</td>
+                        <td>Más seguro, ya que los administradores inspeccionan y configuran las direcciones IP manualmente [24]. Ideal para restringir la asignación a dispositivos autorizados [24].</td>
+                    </tr>
+                    <tr>
+                        <td>**Dispositivos Típicos**</td>
+                        <td>Hosts de uso general, dispositivos de usuario final y dispositivos móviles [24, 28].</td>
+                        <td>Dispositivos de red clave: *gateways*, *switches*, servidores, impresoras y sistemas heredados [28, 31].</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Autor basado en las fuentes: ManageEngine OpUtils, Institut Sa Palomera, Administración de Oracle Solaris, Microsoft Learn, GoDaddy, ASUS y elConspirador.com.</p>
+    </footer>
+
+</body>
+</html>
