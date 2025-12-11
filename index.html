@@ -3,182 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="DANIEL" content="mipaginaweb">
-    <meta name="Description" content="Esta es la pagina de Daniel">
-    <meta name="Keywords" content="HTML, CSS, JavaScript, SQL, PHP, jQuery, XML,DOM,Bootstrap,Python">
-    <meta property="og:title" content="Página de Daniel González">
-    <meta property="og:description" content="Esta es mi página web personal con enlaces y trabajos.">
+    <meta name="author" content="Daniel González">
+    <meta name="description" content="Portafolio web personal de Daniel González. Explora mis proyectos en desarrollo web, programación y sistemas.">
+    <meta name="keywords" content="Portafolio, Daniel González, Web Developer, HTML, CSS, JavaScript, SQL, PHP, jQuery, DOM, Bootstrap, Python, Sistemas">
+
+    <meta property="og:title" content="Portafolio Profesional de Daniel González">
+    <meta property="og:description" content="Explora mis trabajos y habilidades en desarrollo web y tecnología.">
     <meta property="og:image" content="source/logo.png">
-    <meta property="og:url" content="https://www.whatsapp.com/?lang=es">
+    <meta property="og:url" content="https://tu-url-profesional.com">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="whatsapp">
-    <title>Página de Daniel</title>
-    <style>
-        body {
-            background: linear-gradient(to bottom right, #e2e2e2, #ffffff);
-            font-family: "Segoe UI", Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+    <meta property="og:site_name" content="Portafolio de Daniel">
 
-        header {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-            font-size: 1.5em;
-            letter-spacing: 1px;
-        }
+    <title>Daniel González | Portafolio Web Profesional</title>
 
-        .div {
-            width: 600px;
-            height: 130px;
-            border: 2px solid #d32f2f;
-            margin: 5vh auto;
-            background-color: #fff06b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1em;
-            position: relative;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
+    <link rel="stylesheet" href="css/main.css">
 
-        .div img {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            width: 90px;
-            height: 90px;
-            border-radius: 10px;
-            object-fit: cover;
-            border: 2px solid #d32f2f;
-        }
+    <link rel="icon" type="image/x-icon" href="source/favicon.ico">
 
-        .trabajo {
-            width: 320px;
-            height: 100px;
-            border: 2px solid #000;
-            text-align: center;
-            margin: 3vh auto;
-            line-height: 100px;
-            background-color: #cd99eb;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
-        }
-
-        .trabajo:hover {
-            transform: scale(1.05);
-        }
-
-        .trabajo a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        aside {
-            width: 300px;
-            background-color: aquamarine;
-            border: 2px solid black;
-            margin: 3vh auto;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.2);
-        }
-
-        aside h3 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        aside a {
-            display: block;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            margin: 8px 0;
-            text-align: center;
-            transition: color 0.3s;
-        }
-
-        aside a:hover {
-            color: blue;
-        }
-
-        footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            margin-top: 4vh;
-            font-size: 0.9em;
-        }
-    </style>
-</head>
+    </head>
 
 <body>
 
-    <header>
-        🌐 Bienvenido a la página web de Daniel González
+    <header class="main-header" role="banner">
+        <div class="header-content">
+            <h1>Daniel González <span aria-hidden="true">💻</span></h1>
+            <p>Bienvenido a mi portafolio personal de desarrollo.</p>
+        </div>
     </header>
 
-    <div class="div">
-        <img src="source/images.jpeg" alt="auto">
-        ESTA ES MI PÁGINA WEB PERSONAL
-    </div>
+    <main role="main">
 
-    <!-- TRABAJOS PRINCIPALES -->
-    <div class="trabajo">
-        <a href="htmls/div2.html">MI TRABAJO DE CÍRCULOS</a>
-    </div>
+        <section id="profile" class="profile-section" aria-labelledby="profile-heading">
+            <h2 id="profile-heading" class="sr-only">Perfil Profesional</h2> 
+            <div class="profile-card">
+                <img src="source/images.jpeg" alt="Retrato de Daniel González, Desarrollador Web" class="profile-image">
+                <div class="profile-info">
+                    <h3>¡Hola! Soy Daniel.</h3>
+                    <p>
+                        Esta es mi página web personal. Aquí encontrarás una colección de mis proyectos, trabajos y enlaces de interés relacionados con el desarrollo web y la tecnología. Mi enfoque principal es la **creación de soluciones funcionales y atractivas**, con pasión por el aprendizaje constante.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <div class="trabajo">
-        <a href="htmls/galery.html">TRABAJO 1</a>
-    </div>
+        <section id="skills" class="skills-section" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">🛠️ Habilidades Clave</h2>
+            <div class="skills-container">
+                <span class="skill-tag" aria-label="Habilidad: HTML5">HTML5</span>
+                <span class="skill-tag" aria-label="Habilidad: CSS3">CSS3</span>
+                <span class="skill-tag" aria-label="Habilidad: JavaScript">JavaScript</span>
+                <span class="skill-tag" aria-label="Habilidad: Python">Python</span>
+                <span class="skill-tag" aria-label="Habilidad: SQL y PHP">SQL/PHP</span>
+                <span class="skill-tag" aria-label="Habilidad: Bootstrap">Bootstrap</span>
+                <span class="skill-tag" aria-label="Habilidad: Sistemas Operativos">Sistemas Operativos</span>
+            </div>
+        </section>
 
-    <div class="trabajo">
-        <a href="htmls/mi-primera-web.html">TRABAJO 2</a>
-    </div>
+        <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">📂 Proyectos Destacados</h2>
 
-    <div class="trabajo">
-        <a href="htmls/dhcp.html">TRABAJO 3</a>
-    </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>Mi Trabajo de Círculos</h3>
+                    <p>Exploración avanzada de CSS y diseño con formas geométricas para practicar la propiedad `border-radius`.</p>
+                    <a href="htmls/div2.html" class="project-link" aria-label="Ver Proyecto: Mi Trabajo de Círculos">Ver Proyecto »</a>
+                </article>
 
-    <div class="trabajo">
-        <a href="htmls/div8mal.html">TRABAJO 4</a>
-    </div>
+                <article class="project-card">
+                    <h3>Galería Web Responsiva</h3>
+                    <p>Diseño y maquetación de una galería de imágenes utilizando Flexbox/Grid y técnicas de responsividad.</p>
+                    <a href="htmls/galery.html" class="project-link" aria-label="Ver Proyecto: Galería Web">Ver Proyecto »</a>
+                </article>
 
-    <div class="trabajo">
-        <a href="htmls/mapa.html">TRABAJO 5</a>
-    </div>
+                <article class="project-card">
+                    <h3>Mi Primera Web</h3>
+                    <p>Estructura inicial de una página web con HTML básico y CSS, un hito de aprendizaje en clase.</p>
+                    <a href="htmls/mi-primera-web.html" class="project-link" aria-label="Ver Proyecto: Mi Primera Web">Ver Proyecto »</a>
+                </article>
 
-    <aside>
-        <h3>🌟 Enlaces de Interés</h3>
-        <a href="https://www.google.es/maps" target="_blank">Google Maps</a>
-        <a href="https://translate.google.com/?hl=es" target="_blank">Traductor de Google</a>
-        <a href="https://www.nationalgeographic.com/es" target="_blank">National Geographic</a>
-        <a href="https://www.elpais.com" target="_blank">El País (Noticias)</a>
-        <a href="https://www.xataka.com" target="_blank">Xataka (Tecnología)</a>
-        <a href="https://www.youtube.com/@SpaceX" target="_blank">SpaceX - YouTube</a>
-        <a href="https://www.w3schools.com" target="_blank">W3Schools (Aprende HTML)</a>
-    </aside>
+                <article class="project-card">
+                    <h3>Configuración DHCP</h3>
+                    <p>Documentación técnica sobre la implementación, configuración y gestión de servicios de red (DHCP).</p>
+                    <a href="htmls/dhcp.html" class="project-link" aria-label="Ver Proyecto: Configuración DHCP">Ver Proyecto »</a>
+                </article>
 
-    <details>
-        <summary>SEO</summary>
-        <p>Es el conjunto de técnicas para mejorar la visibilidad de un sitio web en buscadores.</p>
-    </details>
+                <article class="project-card">
+                    <h3>BOLITAS (Ejercicio DOM/Animación)</h3>
+                    <p>Práctica de manipulación del DOM y/o animaciones CSS con elementos simples.</p>
+                    <a href="htmls/div8mal.html" class="project-link" aria-label="Ver Proyecto: Bolitas">Ver Proyecto »</a>
+                </article>
 
-    <details>
-        <summary>OPENGRAPH</summary>
-        <p>Protocolo de marcado para controlar cómo se muestran los enlaces en redes sociales.</p>
-    </details>
+                <article class="project-card">
+                    <h3>Integración de Mapas API</h3>
+                    <p>Uso de APIs externas para visualizar mapas geográficos interactivos en la web.</p>
+                    <a href="htmls/mapa.html" class="project-link" aria-label="Ver Proyecto: Integración de Mapas">Ver Proyecto »</a>
+                </article>
+            </div>
+        </section>
+
+        <div class="info-container">
+
+            <section class="technical-info" aria-labelledby="tech-heading">
+                <h2 id="tech-heading">📚 Información Técnica</h2>
+                <div class="tech-details-grid">
+                    <details class="tech-details">
+                        <summary>SEO (Search Engine Optimization)</summary>
+                        <p>Es el conjunto de técnicas para mejorar la visibilidad de un sitio web en motores de búsqueda como Google. Se aplica optimizando metas, contenido y estructura.</p>
+                    </details>
+
+                    <details class="tech-details">
+                        <summary>OPEN GRAPH Protocol</summary>
+                        <p>Protocolo de marcado utilizado para controlar cómo se muestra el contenido web cuando se comparte en redes sociales (Facebook, LinkedIn, etc.), optimizando la presentación.</p>
+                    </details>
+                </div>
+            </section>
+
+            <aside class="links-aside" aria-labelledby="resources-heading">
+                <h2 id="resources-heading">🔗 Recursos Útiles</h2>
+                <ul class="resource-list">
+                    <li><a href="https://www.w3schools.com" target="_blank">W3Schools - Aprende HTML, CSS y más</a></li>
+                    <li><a href="https://www.xataka.com" target="_blank">Xataka - Noticias de Tecnología</a></li>
+                    <li><a href="https://translate.google.com/?hl=es" target="_blank">Traductor de Google</a></li>
+                    <li><a href="https://www.nationalgeographic.com/es" target="_blank">National Geographic</a></li>
+                    <li><a href="https://www.elpais.com" target="_blank">El País - Noticias</a></li>
+                    <li><a href="https://www.google.es/maps" target="_blank">Google Maps</a></li>
+                    <li><a href="https://www.youtube.com/@SpaceX" target="_blank">SpaceX - Canal Oficial</a></li>
+                </ul>
+            </aside>
+        </div>
+
+    </main>
+
+    <footer class="main-footer" role="contentinfo">
+        <p>&copy; 2025 Daniel González | Portafolio Personal.</p>
+        <p>Desarrollado con HTML5 y CSS3.</p>
+    </footer>
 
 </body>
 </html>

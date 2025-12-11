@@ -1,0 +1,82 @@
+
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif; 
+    line-height: 1.5;
+    padding: 20px; 
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+
+h2 {
+    
+    margin-bottom: 5px;
+    border-bottom: 1px solid black; 
+    padding-bottom: 2px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.profile-info {
+    overflow: auto; 
+}
+
+
+section, aside, footer {
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.main-footer {
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
+
+.project-link, .links-aside a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.links-aside ul {
+    list-style: square; 
+    padding-left: 20px;
+}
+
+.skill-tag {
+
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.projects-grid {
+    clear: both;
+}
+
+@media (max-width: 600px) {
+    .profile-image {
+        float: none; 
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+    .profile-card {
+        text-align: center;
+    }
+}
